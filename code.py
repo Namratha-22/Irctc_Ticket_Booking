@@ -6,10 +6,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import  Keys
 from time import sleep, strftime
 
-def waituntil(s):
-    while strftime('%H:%M:%S') < s:
-        print (strftime('%H:%M:%S'))
-        sleep(1)
 
 def login():
     driver.get('https://www.irctc.co.in/eticketing/loginHome.jsf')
@@ -77,10 +73,8 @@ SBI_CARD_PIN='ATM'   #ATM PIN
 SBI_CARD_NAME=''  
 
 if __name__ == '__main__':
-    profile =webdriver.Chrome(executable_path="C:\python practice\py_driver\chromedriver_win32\chromedriver.exe")
-    profile.set_preference('webdriver.load.strategy', 'unstable')
- 
-    driver = webdriver.Firefox(profile)
+    driver =webdriver.Chrome(executable_path="C:\python practice\py_driver\chromedriver_win32\chromedriver.exe")
+
     login()
     planjourney()
     filldetails()
